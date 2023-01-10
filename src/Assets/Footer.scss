@@ -1,0 +1,51 @@
+@import '../index.scss';
+
+footer {
+  .footer-wrapper {
+    height: 32vh;
+    .footer-brand {
+      background-color: blue;
+      width: 30%;
+      figure {
+        img {
+          width: 295px;
+        }
+      }
+    }
+
+    .footer-content {
+      width: 70%;
+      background-color: yellow;
+
+      .content {
+        width: 16rem;
+        background-color: aqua;
+        h5 {
+          @include title-tx-op5;
+        }
+
+        ul {
+          padding: 0;
+          li {
+            list-style: none;
+            a {
+              @include para-tx-os2;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .location {
+        background-color: cyan;
+        h5 {
+          @include title-tx-op5;
+        }
+
+        p {
+          @include para-tx-os2;
+        }
+      }
+    }
+  }
+}

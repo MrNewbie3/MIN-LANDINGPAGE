@@ -1,0 +1,38 @@
+@import '../index.scss';
+
+.schedule {
+  height: 100vh;
+  .schedule-wrapper {
+    figure {
+      width: 60%;
+      img {
+        width: 760px;
+      }
+    }
+
+    article {
+      width: 40%;
+      .title {
+        h2 {
+          @include title-tx-ms2;
+        }
+        p {
+          @include para-tx-os2;
+        }
+      }
+
+      .content-wrapper {
+        margin-top: 1.5rem;
+        .content {
+          h5 {
+            @include tibo-tx-op5;
+          }
+          p {
+            margin-top: 4px;
+            @include para-tx-os2;
+          }
+        }
+      }
+    }
+  }
+}

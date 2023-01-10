@@ -7,8 +7,30 @@ const handleCard = () => {
 }
 
 function CardList ({data}) {
-  
+  return (
+    <ul className='d-flex gap-3 text-center align-items-center flex-wrap'>
+    {data.map((item, index) => (
+      <>
+        <li key={index} onClick={handleCard}><a>
+          <h6>{index + 1}</h6>
+          <p>{item.content}</p>
+          </a>
+        </li>
+      </>
+    ))}
+    </ul>
+  );
 }
+
+const DataFlowRes = [
+  {content : 'Data Diri'},
+  {content : 'Isi Identitas Diri'},
+  {content : 'Unggah Berkas'},
+  {content : 'Tunggu Verifikasi'},
+  {content : 'Lakukan Tes'},
+  {content : 'Lihat Hasil Tes'},
+  {content : 'Daftar Ulang'},
+]
 
 const RegisterFlow = () => {
   return (
@@ -21,36 +43,7 @@ const RegisterFlow = () => {
               <p>Ikuti langkah langkah dibawah ini supaya proses pendaftaran berjalan lancar tanpa kendala apapun.</p>
             </div>
             <div className="figure-content-wrap d-flex flex-column">
-              <ul className='d-flex gap-3 text-center align-items-center flex-wrap'>
-                <li className='card-active' onClick={handleCard}><a>
-                  <h6>1</h6>
-                  <p>Data Diri</p></a>
-                  </li>
-                <li><a>
-                  <h6>2</h6>
-                  <p>Isi Identitas Diri</p></a>
-                  </li>
-                <li><a>
-                  <h6>3</h6>
-                  <p>Unggah Berkas</p></a>
-                  </li>
-                <li><a>
-                  <h6>4</h6>
-                  <p>Tunggu Verifikasi</p></a>
-                  </li>
-                <li><a>
-                  <h6>5</h6>
-                  <p>Lakukan Tes</p></a>
-                  </li>
-                <li><a>
-                  <h6>6</h6>
-                  <p>Lihat Hasil Tes</p></a>
-                  </li>
-                <li><a>
-                  <h6>7</h6>
-                  <p>Daftar Ulang</p></a>
-                  </li>
-              </ul>
+              <CardList data={DataFlowRes}  />
               <div className="tab-content-wrapper">
                 <div className="tab-panel">
                   <ul>

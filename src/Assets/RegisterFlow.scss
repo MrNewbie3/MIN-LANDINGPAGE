@@ -1,0 +1,102 @@
+@import '../index.scss';
+
+.register-flow {
+  height: 100vh;
+  .register-flow-wrapper {
+    article {
+      width: 60%;
+      .title {
+        h2 {
+          @include title-tx-ms2;
+        }
+        p {
+          @include para-tx-os2;
+          margin-top: 12px;
+        }
+      }
+
+      .figure-content-wrap {
+        margin-top: 2rem;
+        .card-active {
+          z-index: 999;
+          cursor: pointer;
+          background: $gradient-green;
+          a {
+            h6 {
+              @include title-wh-ms4;
+              background: none;
+            }
+            p {
+              @include para-wh-os2;
+              background: none;
+            }
+          }
+        }
+
+        ul {
+          padding: 0;
+          list-style: none;
+          li {
+            @include over-sd;
+            border-radius: 1rem;
+            padding: 16px 18px;
+            border: 1px solid $light-grey;
+            background: $white;
+            a {
+              text-decoration: none;
+              h6 {
+                @include title-tx-ms4;
+              }
+              p {
+                @include para-tx-os2;
+                width: 88px;
+                height: 40px;
+              } 
+            }
+          }:hover {
+            z-index: 999;
+            cursor: pointer;
+            background: $gradient-green;
+            a {
+              h6 {
+                @include title-wh-ms4;
+                background: none;
+              }
+              p {
+                @include para-wh-os2;
+                background: none;
+              }
+            }
+          }
+        }
+
+        .tab-content-wrapper {
+          margin-top: 1.5rem;
+          background: none;
+          .tab-panel {
+            ul {
+              padding-left: 1rem;
+              list-style: decimal;
+              li {
+                border: none;
+                padding: 0;
+                box-shadow: none;
+                @include para-tx-os2
+              }:hover {
+                background: none;
+                cursor: auto;
+              }
+            }
+          }
+        }
+      }
+
+    }
+    figure {
+      width: 40%;
+      img {
+        width: 468px;
+      }
+    }
+  }
+}

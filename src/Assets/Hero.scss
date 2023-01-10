@@ -1,0 +1,33 @@
+@import '../index.scss';
+
+.hero {
+  height: 90vh;
+  .hero-wrapper {
+    position: relative;
+    top: 14vh;
+    article {
+      width: 50%;
+      h1 {
+        @include title-tx-ms1;
+      }
+
+      h3 {
+        @include title-tx-ms3;
+        margin-top: .5rem;
+      }
+
+      p {
+        @include para-tx-os1;
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    figure {
+      width: 50%;
+      img {
+        width: 512px;
+      }
+    }
+  }
+}

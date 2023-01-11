@@ -1,38 +1,52 @@
-import React from 'react';
+import { tab } from '@testing-library/user-event/dist/tab';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../Assets/RegisterFlow.scss';
 
 
-const handleCard = () => {
-  console.log('klik')
-}
 
-function CardList ({data}) {
-  return (
-    <ul className='d-flex gap-3 text-center align-items-center flex-wrap'>
-    {data.map((item, index) => (
-      <>
-        <li key={index} onClick={handleCard}><a>
-          <h6>{index + 1}</h6>
-          <p>{item.content}</p>
-          </a>
-        </li>
-      </>
-    ))}
-    </ul>
-  );
-}
 
-const DataFlowRes = [
-  {content : 'Data Diri'},
-  {content : 'Isi Identitas Diri'},
-  {content : 'Unggah Berkas'},
-  {content : 'Tunggu Verifikasi'},
-  {content : 'Lakukan Tes'},
-  {content : 'Lihat Hasil Tes'},
-  {content : 'Daftar Ulang'},
-]
+
+// function CardList ({data}) { 
+//   return (
+//     <ul className='d-flex gap-3 text-center align-items-center flex-wrap'>
+//     {data.map((item, index) => (
+//       <>
+//         <li key={index} onClick={handleCard} className={item.active ? "card-active" : ""} id={`tab${index}`}>
+//           <Link to={`/?id=${index}`}>
+//           <h6>{index + 1}</h6>
+//           <p>{item.content}</p>
+//           </Link>
+//         </li>
+//       </>
+//     ))}
+//     </ul>
+//   );
+// }
+
+
 
 const RegisterFlow = () => {
+  const [activeTab, setActiveTab] = useState('tab1');
+
+  const handleCard = () => {
+    console.log('klik')
+  }
+
+  const handleClickTab = (tab) => {
+    setActiveTab(tab);
+  }
+
+  const DataTab = [
+    { label: 'Data Diri', id: 'tab1', content: '' },
+    { label: 'Isi Identitas Diri', id: 'tab2', content: '' },
+    { label: 'Unggah Berkas', id: 'tab3', content: '' },
+    { label: 'Tunggu Verifikasi', id: 'tab4', content: '' },
+    { label: 'Lakukan Tes', id: 'tab5', content: '' },
+    { label: 'Lihat Hasil Tes', id: 'tab6', content: '' },
+    { label: 'Daftar Ulang', id: 'tab7', content: '' },
+  ]
+
   return (
     <section className="register-flow">
       <div className="container">
@@ -43,7 +57,24 @@ const RegisterFlow = () => {
               <p>Ikuti langkah langkah dibawah ini supaya proses pendaftaran berjalan lancar tanpa kendala apapun.</p>
             </div>
             <div className="figure-content-wrap d-flex flex-column">
-              <CardList data={DataFlowRes}  />
+              <div className="tab-wrapper">
+                <ul className='d-flex gap-3 text-center align-items-center flex-wrap'>
+                  {DataTab.map((tab, index) => (
+                    <li 
+                    key={tab.id}
+                    className={`tab ${activeTab === tab.id ? 'card-active' : '' }`}
+                    onClick = {() => handleClickTab(tab.id)}
+                    >
+                      <h6>{index + 1}</h6>
+                      <p>{tab.label}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="tab-content">
+
+              </div>
+
               <div className="tab-content-wrapper">
                 <div className="tab-panel">
                   <ul>

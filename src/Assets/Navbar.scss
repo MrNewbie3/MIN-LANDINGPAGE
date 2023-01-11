@@ -1,5 +1,13 @@
 @import '../index.scss';
 
+nav {
+  background-color: $white;
+}
+
+.nav-shadow {
+  box-shadow: 0px 4px 13px 0px #00000012;
+}
+
 .navbar-brand {
   width: 14rem;
 }

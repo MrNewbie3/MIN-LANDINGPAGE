@@ -17,47 +17,18 @@
 
       .figure-content-wrap {
         margin-top: 2rem;
-        .card-active {
-          z-index: 999;
-          cursor: pointer;
-          background: $gradient-green;
-          a {
-            h6 {
-              @include title-wh-ms4;
-              background: none;
-            }
-            p {
-              @include para-wh-os2;
-              background: none;
-            }
-          }
-        }
 
-        ul {
-          padding: 0;
-          list-style: none;
-          li {
-            @include over-sd;
-            border-radius: 1rem;
-            padding: 16px 18px;
-            border: .5px solid $light-grey;
-            background: $white;
-            a {
-              text-decoration: none;
-              h6 {
-                @include title-tx-ms4;
-              }
-              p {
-                @include para-tx-os2;
-                width: 88px;
-                height: 40px;
-              } 
-            }
-          }:hover {
-            z-index: 999;
-            cursor: pointer;
-            background: $gradient-green;
-            a {
+        .tab-wrapper {
+
+          ul {
+            padding: 0;
+            list-style: none;
+
+            .card-active {
+              z-index: 999;
+              cursor: pointer;
+              background: $gradient-green;
+
               h6 {
                 @include title-wh-ms4;
                 background: none;
@@ -65,11 +36,42 @@
               p {
                 @include para-wh-os2;
                 background: none;
+                width: 88px;
+                height: 40px;
               }
+            }
+
+            li {
+              @include over-sd;
+              border-radius: 1rem;
+              padding: 16px 18px;
+              border: .5px solid $light-grey;
+              background: $white;
+              text-decoration: none;
+                h6 {
+                  @include title-tx-ms4;
+                }
+                p {
+                  @include para-tx-os2;
+                  width: 88px;
+                  height: 40px;
+                } 
+            }:hover {
+              z-index: 9999;
+              cursor: pointer;
+              background: $gradient-green;
+                h6 {
+                  @include title-wh-ms4;
+                  background: none;
+                }
+                p {
+                  @include para-wh-os2;
+                  background: none;
+                }
             }
           }
         }
-
+      
         .tab-content-wrapper {
           margin-top: 1.5rem;
           background: none;

@@ -3,9 +3,9 @@ import '../Assets/Hero.scss';
 
 const Hero = () => {
   return (
-    <div className="hero">
+    <div className="hero" id='hero'>
       <div className="container">
-        <div className="hero-wrapper d-flex justify-content-between align-items-end">
+        <div className="hero-wrapper d-flex justify-content-between">
           <article>
             <h1>PPDB Online</h1>
             <h3>Tiada Hari Tanpa Prestasi</h3>

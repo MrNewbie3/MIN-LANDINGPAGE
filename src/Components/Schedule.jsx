@@ -3,13 +3,13 @@ import '../Assets/Schedule.scss';
 
 const Schedule = () => {
   return (
-    <section className="schedule">
+    <section className="schedule" id='schedule'>
       <div className="container">
         <div className="schedule-wrapper d-flex align-items-center">
           <figure>
             <img src="images/Introduction/school.png" alt="design by freepik" />
           </figure>
-          <article className='d-flex justify-content-center'>
+          <article className='d-flex'>
             <div className="schedule-content-wrapper">
               <div className="title">
                 <h2>Jadwal Pendaftaran</h2>

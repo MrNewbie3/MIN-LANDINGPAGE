@@ -24,13 +24,13 @@ export const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav ms-auto gap-3">
               <li className="nav-item">
-                <a className="nav-link" href="ppdbapps">Dashboard</a>
+                <a className="nav-link" href="#hero">Dashboard</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Alur Pendaftaran</a>
+                <a className="nav-link" href="#regisflow">Alur Pendaftaran</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">Jadwal</a>
+                <a className="nav-link" href="#schedule">Jadwal</a>
               </li>
               <li className="nav-item">
                 <button className='btn-nav'>Login</button>

@@ -1,13 +1,9 @@
-import { tab } from '@testing-library/user-event/dist/tab';
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../Assets/RegisterFlow.scss';
+import { tab } from "@testing-library/user-event/dist/tab";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import "../Assets/RegisterFlow.scss";
 
-
-
-
-
-// function CardList ({data}) { 
+// function CardList ({data}) {
 //   return (
 //     <ul className='d-flex gap-3 text-center align-items-center flex-wrap'>
 //     {data.map((item, index) => (
@@ -24,28 +20,26 @@ import '../Assets/RegisterFlow.scss';
 //   );
 // }
 
-
-
 const RegisterFlow = () => {
-  const [activeTab, setActiveTab] = useState('tab1');
+  const [activeTab, setActiveTab] = useState("tab1");
 
   const handleCard = () => {
-    console.log('klik')
-  }
+    console.log("klik");
+  };
 
   const handleClickTab = (tab) => {
     setActiveTab(tab);
-  }
+  };
 
   const DataTab = [
-    { label: 'Data Diri', id: 'tab1', content: '' },
-    { label: 'Isi Identitas Diri', id: 'tab2', content: '' },
-    { label: 'Unggah Berkas', id: 'tab3', content: '' },
-    { label: 'Tunggu Verifikasi', id: 'tab4', content: '' },
-    { label: 'Lakukan Tes', id: 'tab5', content: '' },
-    { label: 'Lihat Hasil Tes', id: 'tab6', content: '' },
-    { label: 'Daftar Ulang', id: 'tab7', content: '' },
-  ]
+    { label: "Data Diri", id: "tab1", content: "" },
+    { label: "Isi Identitas Diri", id: "tab2", content: "" },
+    { label: "Unggah Berkas", id: "tab3", content: "" },
+    { label: "Tunggu Verifikasi", id: "tab4", content: "" },
+    { label: "Lakukan Tes", id: "tab5", content: "" },
+    { label: "Lihat Hasil Tes", id: "tab6", content: "" },
+    { label: "Daftar Ulang", id: "tab7", content: "" },
+  ];
 
   return (
     <section className="register-flow">
@@ -58,25 +52,18 @@ const RegisterFlow = () => {
             </div>
             <div className="figure-content-wrap d-flex flex-column">
               <div className="tab-wrapper">
-                <ul className='d-flex gap-3 text-center align-items-center flex-wrap'>
+                <ul className="d-flex gap-4 text-center align-items-center flex-wrap">
                   {DataTab.map((tab, index) => (
-                    <li 
-                    key={tab.id}
-                    className={`tab ${activeTab === tab.id ? 'card-active' : '' }`}
-                    onClick = {() => handleClickTab(tab.id)}
-                    >
+                    <li key={tab.id} className={` tab card py-4 h-fit  ${activeTab === tab.id ? "card-active" : ""}`} onClick={() => handleClickTab(tab.id)}>
                       <h6>{index + 1}</h6>
-                      <p>{tab.label}</p>
+                      <p className="leading-5">{tab.label}</p>
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="tab-content">
-
-              </div>
-
+              <div className="tab-content"></div>
               <div className="tab-content-wrapper">
-                <div className="tab-panel">
+                <div className="tab-panel my-4">
                   <ul>
                     <li>Klik “Daftar Sekarang” atau “Login” diatas</li>
                     <li>Pilih tab Daftar</li>
@@ -87,13 +74,13 @@ const RegisterFlow = () => {
               </div>
             </div>
           </article>
-          <figure className='d-flex justify-content-center'>
+          <figure className="d-flex justify-content-center">
             <img src="images/Introduction/confused.png" alt="design by freepik" />
           </figure>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default RegisterFlow;

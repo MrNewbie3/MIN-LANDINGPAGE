@@ -1,9 +1,8 @@
-@import '../index.scss';
+@import "../index.scss";
 
 .hero {
   height: 100vh;
   .hero-wrapper {
-    position: relative;
     top: 22vh;
     article {
       width: 50%;
@@ -13,7 +12,7 @@
 
       h3 {
         @include title-tx-ms3;
-        margin-top: .5rem;
+        margin-top: 0.5rem;
       }
 
       p {

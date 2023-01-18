@@ -8,6 +8,8 @@ module.exports = {
         "green-gradient": "#07472D",
         grey: "#EAEAEA",
         "stroke-number": "#EAEAEA",
+        "add-blue": "#32ACAC",
+        red: "#EC3537",
       },
       fontFamily: {
         "Open-sans": '"Open Sans"',

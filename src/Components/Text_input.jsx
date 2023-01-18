@@ -6,7 +6,7 @@ const TextInput = (props) => {
           {props.title} <span className="text-red-600">{props.required ? "*" : ""}</span>
         </p>
       </div>
-      <div className="forms w-full">
+      <div className="forms w-full flex items-center">
         <input type={props.type} placeholder={props.hintText} value={props.value} onChange={props.onChange} className="input w-full bg-stroke-number rounded-full" name={props.name} id={props.id} />
       </div>
     </div>

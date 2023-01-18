@@ -1,15 +1,5 @@
-import SelectForm from "./Select_Comps";
 import TextInput from "./Text_input";
-const Gender = [
-  { value: "Laki-Laki", label: "Laki-Laki" },
-  { value: "Perempuan", label: "Perempuan" },
-];
-const bloodType = [
-  { value: "A", label: "A" },
-  { value: "B", label: "B" },
-  { value: "AB", label: "AB" },
-  { value: "O", label: "O" },
-];
+
 const DataAlamat = () => {
   return (
     <div className="mainwrapper w-full">

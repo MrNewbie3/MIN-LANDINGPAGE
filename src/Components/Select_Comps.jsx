@@ -27,7 +27,9 @@ const SelectForm = (props) => {
             }),
           }}
           defaultValue={props.value[0]}
+          name={props.name}
           options={props.value === null || undefined ? options : props.value}
+          onChange={props.onChange}
         />
       </div>
     </div>

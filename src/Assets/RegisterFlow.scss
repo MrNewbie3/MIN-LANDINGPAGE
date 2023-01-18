@@ -25,7 +25,7 @@
             list-style: none;
 
             .card-active {
-              z-index: 999;
+              z-index: 9;
               cursor: pointer;
               background: $gradient-green;
 
@@ -57,7 +57,7 @@
                   height: 40px;
                 } 
             }:hover {
-              z-index: 9999;
+              z-index: 8;
               cursor: pointer;
               background: $gradient-green;
                 h6 {
@@ -71,24 +71,13 @@
             }
           }
         }
-      
-        .tab-content-wrapper {
-          margin-top: 1.5rem;
-          background: none;
-          .tab-panel {
-            ul {
-              padding-left: 1rem;
-              list-style: decimal;
-              li {
-                border: none;
-                padding: 0;
-                box-shadow: none;
-                @include para-tx-os2
-              }:hover {
-                background: none;
-                cursor: auto;
-              }
-            }
+
+        .tab-content {
+          z-index: 999;
+          margin-top: 1rem;
+          height: 2rem;
+          p {
+            @include para-tx-os2;
           }
         }
       }
@@ -97,7 +86,32 @@
     figure {
       width: 40%;
       img {
-        width: 468px;
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media (max-width: 820px) {
+  .register-flow {
+    height: auto;
+    margin-top: 5rem;
+
+    .register-flow-wrapper {
+      flex-direction: column;
+      row-gap: 5rem;
+      align-items: flex-start;
+      article {
+        width: 100%;
+        .tab-wrapper {
+          ul {
+            justify-content: flex-start;
+          }
+        }
+
+      }
+      figure {
+        width: 100%;
       }
     }
   }

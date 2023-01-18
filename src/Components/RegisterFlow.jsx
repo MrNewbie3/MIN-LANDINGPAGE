@@ -3,23 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../Assets/RegisterFlow.scss";
 
-// function CardList ({data}) {
-//   return (
-//     <ul className='d-flex gap-3 text-center align-items-center flex-wrap'>
-//     {data.map((item, index) => (
-//       <>
-//         <li key={index} onClick={handleCard} className={item.active ? "card-active" : ""} id={`tab${index}`}>
-//           <Link to={`/?id=${index}`}>
-//           <h6>{index + 1}</h6>
-//           <p>{item.content}</p>
-//           </Link>
-//         </li>
-//       </>
-//     ))}
-//     </ul>
-//   );
-// }
-
 const RegisterFlow = () => {
   const [activeTab, setActiveTab] = useState("tab1");
 

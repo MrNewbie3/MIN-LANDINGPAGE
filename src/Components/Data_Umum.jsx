@@ -1,4 +1,5 @@
 import SelectForm from "./Select_Comps";
+import SubmitBtn from "./Submit_Btn";
 import TextInput from "./Text_input";
 const Gender = [
   { value: "Laki-Laki", label: "Laki-Laki" },
@@ -33,6 +34,9 @@ const DataUmum = () => {
           <SelectForm title="Asal Sekolah" required={true} value={bloodType} />
           <TextInput title="Nama Sekolah" required={true} type="text" hintText="cth: TK Kusuma Mulia Malang" value="" />
           <TextInput title="NPSN" required={true} type="number" hintText="cth: 09817322" value="" />
+          <div className="flex justify-end w-full">
+            <SubmitBtn />
+          </div>
         </div>
       </div>
     </div>

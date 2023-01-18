@@ -7,7 +7,7 @@ import Schedule from "../Components/Schedule";
 
 const Introduction = () => {
   return (
-    <div className="pl-16">
+    <div className="md:pl-16">
       <Navbar />
       <Hero />
       <RegisterFlow />

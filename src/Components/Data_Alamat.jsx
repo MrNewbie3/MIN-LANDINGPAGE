@@ -1,3 +1,4 @@
+import SubmitBtn from "./Submit_Btn";
 import TextInput from "./Text_input";
 
 const DataAlamat = () => {
@@ -21,6 +22,9 @@ const DataAlamat = () => {
           <TextInput title="Kode Pos" required={true} type="text" hintText="cth: 651658" value="" />
           <TextInput title="Telepon Rumah" required={true} type="tel" hintText="cth: 085855008901" value="" />
           <TextInput title="Nomor Telepon" required={true} type="text" hintText="cth: 087881488608" value="" />
+          <div className="flex justify-end w-full">
+            <SubmitBtn />
+          </div>
         </div>
       </div>
     </div>

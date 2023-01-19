@@ -9,7 +9,7 @@ const SelectForm = (props) => {
     <div className="form flex flex-row w-full items-center ">
       <div className="text w-2/5">
         <p className="text-base font-medium ">
-          {props.title} <span className="text-red-600">{props.required ? "*" : ""}</span>
+          {props.title} <span className="text-red">{props.required ? "*" : ""}</span>
         </p>
       </div>
       <div className="forms w-full">

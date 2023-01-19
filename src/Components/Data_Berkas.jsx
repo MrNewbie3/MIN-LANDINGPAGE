@@ -1,7 +1,5 @@
 import SubmitBtn from "./Submit_Btn";
 import { useDropzone } from "react-dropzone";
-import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
-import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
 import Left_Files from "./Left_Files";
 import Right_Files from "./Right_Files";
 const DataBerkas = () => {

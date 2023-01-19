@@ -121,7 +121,12 @@ $gradient-green: linear-gradient(180deg, #0d6440 34.06%, #07472d 125%);
   font-size: 1rem;
   background: $gradient-green;
   border: none;
-  color: #fff;
+  color: $white;
+  transition: .7s ease-out;
+  &:hover {
+    opacity: 70%;
+    transition: .7s ease-out;
+  }
 }
 
 // SHADOW

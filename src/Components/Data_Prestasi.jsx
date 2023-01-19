@@ -3,6 +3,7 @@ import SelectForm from "./Select_Comps";
 import TextInput from "./Text_input";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
+import SubmitBtn from "./Submit_Btn";
 const options = [
   { value: "Undefined", label: "Undefined 1" },
   { value: "Undefined-1", label: "Undefined 2" },
@@ -24,6 +25,9 @@ const DataPrestasi = () => {
     let data = [...input];
     data.splice(index, 1);
     setInputs(data);
+  };
+  const handleSubmit = () => {
+    console.log(input);
   };
   return (
     <div className="flex flex-col w-full gap-y-5">
@@ -75,6 +79,9 @@ const DataPrestasi = () => {
           </div>
         );
       })}
+      <div className="wrapper-btn flex w-full justify-end flex-row">
+        <SubmitBtn onClick={handleSubmit} />
+      </div>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import DataAlamat from "./Data_Alamat";
+import DataBerkas from "./Data_Berkas";
 import DataOrtu from "./Data_OrangTua";
 import DataPrestasi from "./Data_Prestasi";
 import DataUmum from "./Data_Umum";
@@ -41,7 +42,7 @@ const FormRegis = () => {
           <DataUmum />
         </TabPanel>
         <TabPanel>
-          <DataUmum />
+          <DataBerkas />
         </TabPanel>
         <TabPanel>
           <DataOrtu />

@@ -1,17 +1,63 @@
+import { useState } from "react";
 import SelectForm from "./Select_Comps";
 import SubmitBtn from "./Submit_Btn";
 import TextInput from "./Text_input";
-const Gender = [
+const Pekerjaan = [
   { value: "Laki-Laki", label: "Laki-Laki" },
   { value: "Perempuan", label: "Perempuan" },
 ];
-const bloodType = [
+const Penghasilan = [
   { value: "A", label: "A" },
   { value: "B", label: "B" },
   { value: "AB", label: "AB" },
   { value: "O", label: "O" },
 ];
+
 const DataOrtu = () => {
+  const [dataOrtuAyah, setFormValues] = useState({ name: "", nik: "", pekerjaan: "", kantor: "", penghasilan: "" });
+  const [dataOrtuIbu, setFormValueIbu] = useState({ name: "", nik: "", pekerjaan: "", kantor: "", penghasilan: "" });
+  const handleChangeAyah = (e) => {
+    const { name, value } = e.target;
+    setFormValues((prevState) => ({
+      ...prevState,
+      [name]: [value],
+    }));
+  };
+  const handleChangeAyahPekerjaan = (e) => {
+    setFormValues((prevState) => ({
+      ...prevState,
+      pekerjaan: [e.value],
+    }));
+  };
+  const handleChangeAyahPenghasilan = (e) => {
+    setFormValues((prevState) => ({
+      ...prevState,
+      penghasilan: [e.value],
+    }));
+  };
+  const handleChangeIbu = (e) => {
+    const { name, value } = e.target;
+    setFormValueIbu((prevState) => ({
+      ...prevState,
+      [name]: [value],
+    }));
+  };
+  const handleChangeIbuPekerjaan = (e) => {
+    setFormValueIbu((prevState) => ({
+      ...prevState,
+      pekerjaan: [e.value],
+    }));
+  };
+  const handleChangeIbuPenghasilan = (e) => {
+    setFormValueIbu((prevState) => ({
+      ...prevState,
+      penghasilan: [e.value],
+    }));
+  };
+  const handleSubmit = (e) => {
+    console.log(dataOrtuAyah);
+    console.log(dataOrtuIbu);
+  };
   return (
     <div className="mainwrapper w-full">
       <div className="title my-10">
@@ -22,20 +68,52 @@ const DataOrtu = () => {
       </div>
       <div className="Wrapper w-full flex flex-row gap-x-5">
         <div className="left-side w-full flex flex-col gap-y-5">
-          <TextInput title="Nama Lengkap" required={true} type="text" hintText="cth: Tommy Kurniawan" value="" />
-          <TextInput title="NIK" required={true} type="number" hintText="cth: 3507028929839" value="" />
-          <SelectForm title="Pekerjaan" required={true} value={Gender} />
-          <TextInput title="Nama Kantor" required={true} type="text" hintText="cth: Google" value="" />
-          <SelectForm title="Penghasilan" required={true} value={bloodType} />
+          <TextInput title="Nama Lengkap" required={true} name="name" type="text" hintText="cth: Tommy Kurniawan" onChange={handleChangeAyah} value={dataOrtuAyah.name} />
+          <TextInput title="NIK" required={true} name="nik" type="number" hintText="cth: 3507028929839" onChange={handleChangeAyah} value={dataOrtuAyah.nik} />
+          <SelectForm
+            title="Pekerjaan"
+            required={true}
+            name="pekerjaan"
+            onChange={(choice) => {
+              handleChangeAyahPekerjaan(choice);
+            }}
+            value={Pekerjaan}
+          />
+          <TextInput title="Nama Kantor" required={true} name="kantor" type="text" hintText="cth: Google" onChange={handleChangeAyah} value={dataOrtuAyah.kantor} />
+          <SelectForm
+            title="Penghasilan"
+            required={true}
+            name="penghasilan"
+            onChange={(choice) => {
+              handleChangeAyahPenghasilan(choice);
+            }}
+            value={Penghasilan}
+          />
         </div>
         <div className="right-side w-full flex flex-col gap-y-5">
-          <TextInput title="Nama Lengkap" required={true} type="text" hintText="cth: Tommy Kurniawan" value="" />
-          <TextInput title="NIK" required={true} type="number" hintText="cth: 3507028929839" value="" />
-          <SelectForm title="Pekerjaan" required={true} value={Gender} />
-          <TextInput title="Nama Kantor" required={true} type="text" hintText="cth: Google" value="" />
-          <SelectForm title="Penghasilan" required={true} value={bloodType} />
+          <TextInput title="Nama Lengkap" required={true} name="name" type="text" hintText="cth: Tommy Kurniawan" onChange={handleChangeIbu} value={dataOrtuIbu.name} />
+          <TextInput title="NIK" required={true} name="nik" type="number" hintText="cth: 3507028929839" onChange={handleChangeIbu} value={dataOrtuIbu.nik} />
+          <SelectForm
+            title="Pekerjaan"
+            required={true}
+            name="pekerjaan"
+            onChange={(choice) => {
+              handleChangeIbuPekerjaan(choice);
+            }}
+            value={Pekerjaan}
+          />
+          <TextInput title="Nama Kantor" required={true} name="kantor" type="text" hintText="cth: Google" onChange={handleChangeIbu} value={dataOrtuIbu.kantor} />
+          <SelectForm
+            title="Penghasilan"
+            required={true}
+            name="penghasilan"
+            onChange={(choice) => {
+              handleChangeIbuPenghasilan(choice);
+            }}
+            value={Penghasilan}
+          />
           <div className="flex justify-end w-full">
-            <SubmitBtn />
+            <SubmitBtn onClick={handleSubmit} />
           </div>
         </div>
       </div>

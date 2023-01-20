@@ -15,6 +15,7 @@ footer {
   
       .footer-content {
         width: 70%;
+        gap: 1.5rem;
   
         .content {
           width: 16rem;
@@ -47,15 +48,19 @@ footer {
     }
    
     .footer-content-sosmed {
-      p {
-        width: 30%;
-        height: 2rem;
-        @include para-tx-os2;
+      .copyright {
+        p {
+          width: 100%;
+          height: 2rem;
+          @include para-tx-os2;
+        }
       }
 
       .sosmed {
+        display: flex;
         width: 70%;
         height: 2rem;
+        margin-top: 2rem;
         
         .facebook, .instagram {
           width: 12.5rem;
@@ -72,6 +77,60 @@ footer {
           }
         }
         
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    height: max-content;
+    margin-top: 5rem;
+    .footer-wrapper {
+      height: auto;
+      .footer-content-wrapper {
+        flex-direction: column;
+
+        .footer-brand {
+          width: 100%;
+          figure {
+            img {
+              width: 60%;
+            }
+          }
+        }
+
+        .footer-content {
+          flex-direction: column;
+          width: 100%;
+          gap: .5rem;
+        }
+
+
+
+      }
+
+      .footer-content-sosmed {
+        display: block;
+        flex-direction: column;
+          p {
+            order: 2;
+            width: 100%;
+          }
+        .sosmed {
+          order: 1;
+          flex-wrap: wrap;
+          width: 100%;
+          
+          .facebook, .instagram {
+            width: 100%;
+            height: auto;
+          }
+
+          .youtube {
+            width: 100%;
+          }
+        }
       }
     }
   }

@@ -1,6 +1,7 @@
 @import '../index.scss';
 
 nav {
+  z-index: 9999;
   background-color: $white;
 }
 
@@ -27,6 +28,15 @@ nav {
           }
         }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    .container {
+      width: 90vw;
+      margin: 0 auto;
     }
   }
 }

@@ -13,21 +13,21 @@ const Footer = () => {
                 <img src="/images/Introduction/logo-slogan.png" />
               </figure>
             </div>
-            <div className="footer-content d-flex gap-4">
+            <div className="footer-content d-flex">
               <div className="content d-flex flex-column">
                 <h5>Tautan Lain</h5>
                 <ul>
-                  <li><a href="">Dashboard</a></li>
-                  <li><a href="">Alur Pendaftaran</a></li>
-                  <li><a href="">Jadwal Pendaftaran</a></li>
+                  <li><a href="#hero">Dashboard</a></li>
+                  <li><a href="#regisflow">Alur Pendaftaran</a></li>
+                  <li><a href="#schedule">Jadwal Pendaftaran</a></li>
                 </ul>
               </div>
               <div className="content d-flex flex-column">
                 <h5>Narahubung</h5>
                 <ul>
                   <li><a href="">081234567890 (Bu Ayu)</a></li>
-                  <li><a href="">080987654321(Pak Bagus)</a></li>
-                  <li><a href="">080123123123(Pak Budi)</a></li>
+                  <li><a href="">080987654321 (Pak Bagus)</a></li>
+                  <li><a href="">080123123123 (Pak Budi)</a></li>
                 </ul>
               </div>
               <div className="location d-flex flex-column">
@@ -37,8 +37,10 @@ const Footer = () => {
             </div>
           </div>
           <div className="footer-content-sosmed d-flex">
-            <p>©2022. MIN 1 Kota Malang, All rights reserved.</p>
-            <div className="sosmed d-flex gap-4">
+            <div className="copyright">
+              <p>©2022. MIN 1 Kota Malang, All rights reserved.</p>
+            </div>
+            <div className="sosmed gap-4">
               <div className="facebook d-flex align-items-center gap-2">
                 <AiFillFacebook color='$grey' size={24}/> <a href='' id='min-facebook'>MIN 1 Kota Malang</a>
               </div>

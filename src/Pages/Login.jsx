@@ -1,6 +1,5 @@
 import React from 'react'
-import LoginInterface from '../Components/Login/LoginInterface';
-import TextInput from '../Components/Text_input';
+import LoginInterface from "../Components/Login/LoginInterface";
 
 const Login = () => {
   return (

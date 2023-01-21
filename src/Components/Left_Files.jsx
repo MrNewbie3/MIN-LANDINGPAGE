@@ -10,14 +10,11 @@ const Left_Files = () => {
     },
   });
 
-  const acceptedFileItems = acceptedFiles.map((file) =>
-    (
-      <li key={file.path}>
-        {file.path} - {file.size} bytes
-      </li>
-    )
-   
-  );
+  const acceptedFileItems = acceptedFiles.map((file) => (
+    <li key={file.path}>
+      {file.path} - {file.size} bytes
+    </li>
+  ));
 
   const fileRejectionItems = fileRejections.map(({ file, errors }) => (
     <li key={file.path}>
@@ -37,7 +34,7 @@ const Left_Files = () => {
         <p className="text-gray-500 font-medium ">Unggah foto dengan ketentuan menggunakan seragam asal sekolah, rapi, wajah tampak jelas</p>
       </div>
       <section className="container text-gray-500  border-2 border-gray-400 rounded-xl py-3 px-4 flex flex-row gap-x-4">
-        <div className="wrapper-icons py-10 px-7  border-2 border-gray-400 rounded-xl">
+        <div className="wrapper-icons py-10 px-7  border-2 border-gray-400 rounded-xl  hidden md:inline">
           <div className="icons p-4 text-5xl">
             <PersonRoundedIcon fontSize="" />
           </div>

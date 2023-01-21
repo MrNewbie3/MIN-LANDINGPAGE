@@ -6,8 +6,8 @@ const options = [
 ];
 const SelectForm = (props) => {
   return (
-    <div className="form flex flex-row w-full items-center ">
-      <div className="text w-2/5">
+    <div className="form flex flex-col lg:flex-row w-full items-center ">
+      <div className="text w-full lg:w-2/5">
         <p className="text-base font-medium ">
           {props.title} <span className="text-red">{props.required ? "*" : ""}</span>
         </p>

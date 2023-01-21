@@ -1,44 +1,98 @@
-import React from "react";
-import { useState } from "react";
-import { PostData } from "../../Auth/Axios";
-import LoginForm from "./LoginForm";
+import React, { useState } from "react";
+import { redirect } from "react-router-dom";
+import { SyncLoader } from "react-spinners";
+import { useAuthContext } from "../../hooks/useAuthContext";
+import axios from "../../lib/axios";
 import TitleLogin from "./TitleLogin";
+
 const RegisterTabs = () => {
-  const [registerVal, setRegisterVal] = useState({ nama_lengkap: "", email: "", password: "", confirm_password: "" });
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setRegisterVal((prevState) => ({
-      ...prevState,
-      [name]: [value],
-    }));
-  };
-  const handleSubmit = () => {
-    localStorage.setItem("registerVal", JSON.stringify(registerVal));
-    const value = JSON.parse(localStorage.getItem("registerVal"));
-    console.log(value.email.toString());
-    console.log(registerVal.email.toString());
-    PostData("https://ppdbmin.kkafi09.my.id/api/auth/register", {
-      nama_lengkap: value.nama_lengkap.toString(),
-      email: value.email.toString(),
-      password: value.password.toString(),
-      confirm_password: value.confirm_password.toString(),
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const { dispatch } = useAuthContext();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const newUser = {
+      nama_lengkap: name,
+      email: email,
+      password: password,
+      confirm_password: confirmPassword,
+    };
+
+    await axios.post("/api/auth/register", newUser).then((user) => {
+      localStorage.setItem("user", user.data.data.user);
+
+      dispatch({ type: "LOGIN", payload: user.data.data.user });
+
+      setLoading(false);
+      redirect("/login");
     });
+
+    setLoading(false);
   };
+
   return (
     <>
       <div className="content-wrap mt-8 flex justify-center flex-col">
         <TitleLogin desc={"Buat email dan kata sandi untuk login"} />
-        <div className="form-content mt-7">
-          <LoginForm label={"Nama Siswa"} type={"text"} placeholder={"cth: Tommy Kurniawan"} onChange={handleChange} value={registerVal.nama_lengkap} name={"nama_lengkap"} />
-          <LoginForm label={"Email"} type={"email"} placeholder={"cth: tommykurniawan123@gmail.com"} onChange={handleChange} value={registerVal.email} name={"email"} />
-          <LoginForm label={"Kata sandi"} type={"password"} onChange={handleChange} value={registerVal.password} name={"password"} />
-          <LoginForm label={"Ulangi Kata Sandi"} type={"password"} onChange={handleChange} value={registerVal.confirm_password} name={"confirm_password"} />
-        </div>
-        <div className="button-login mt-4">
-          <button type="submit" onClick={handleSubmit} className="py-2 w-full rounded-full bg-green-900 text-white font-semibold text-base">
-            Daftar
-          </button>
-        </div>
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <div className="form-content mt-7">
+            <div className="form-input mb-2">
+              <p className="text-base font-medium">Nama siswa : </p>
+              <input
+                className="w-full px-4 py-2 rounded-full mt-2 bg-grey text-gray-700"
+                type={"text"}
+                placeholder={"cth: Tommy Kurniawan"}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-input mb-2">
+              <p className="text-base font-medium">Email : </p>
+              <input
+                className="w-full px-4 py-2 rounded-full mt-2 bg-grey text-gray-700"
+                type={"email"}
+                placeholder={"cth: tommykurniawan123@gmail.com"}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-input mb-2">
+              <p className="text-base font-medium">Kata sandi : </p>
+              <input
+                className="w-full px-4 py-2 rounded-full mt-2 bg-grey text-gray-700"
+                type={"password"}
+                placeholder={"********"}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </div>
+            <div className="form-input mb-2">
+              <p className="text-base font-medium">Ulangi Kata sandi : </p>
+              <input
+                className="w-full px-4 py-2 rounded-full mt-2 bg-grey text-gray-700"
+                type={"password"}
+                placeholder={"********"}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+              />
+            </div>
+          </div>
+          <div className="button-login mt-4">
+            <button
+              type="submit"
+              className="py-2 w-full rounded-full bg-green-900 text-white font-semibold text-base"
+            >
+              {loading && <SyncLoader size={7} color={"#fff"} />}
+              {!loading && "Daftar"}
+            </button>
+          </div>
+        </form>
       </div>
     </>
   );

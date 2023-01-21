@@ -5,9 +5,14 @@ const header = (axios.defaults.headers.common = {
   "Content-Type": "application/json",
 });
 
+const bearer = JSON.parse(localStorage.getItem("user"));
+const token = bearer.token;
+console.log(token);
+const config = { headers: { Authorization: `Bearer ${token}` } };
+
 export const PostData = (url, value) => {
   axios
-    .post(url, value, header)
+    .post(url, value, config)
     .then((result) => {
       console.log(result);
     })

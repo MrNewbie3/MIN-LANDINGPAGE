@@ -17,8 +17,11 @@ const LoginTabs = () => {
     setLoading(true);
 
     const dataLogin = { email, password };
-
-    await axios.post("/api/auth/login", dataLogin).then((user) => {
+    axios.defaults.headers = {
+      "X-Requested-With": "XMLHttpRequest",
+      "X-CSRF-TOKEN": window.csrf_token,
+    };
+    await axios.post("/api/auth/login", dataLogin, {}).then((user) => {
       localStorage.setItem("user", JSON.stringify(user.data.data));
       console.log("user", user);
 

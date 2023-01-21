@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PostData } from "../Auth/Axios";
 import SelectForm from "./Select_Comps";
 import SubmitBtn from "./Submit_Btn";
 import TextInput from "./Text_input";
@@ -42,8 +43,11 @@ const DataUmum = () => {
       asalSekolah: [e.value],
     }));
   };
-  const handleSubmit = (e) => {
-    console.log(dataDiri);
+  const handleSubmit = () => {
+    localStorage.setItem(
+      "updateData",
+      JSON.stringify({ nama_lengkap: dataDiri.name[0], nisn: dataDiri.nisn[0], jenis_kelamin: dataDiri.jk[0], tempat_lahir: dataDiri.tempat[0], tanggal_lahir: dataDiri.tgl[0], gol_darah: dataDiri.goldar[0] })
+    );
   };
   return (
     <div className="mainwrapper w-full">
@@ -53,7 +57,7 @@ const DataUmum = () => {
           Lengkapi data dibawah, Jika terdapat <span className="text-red-600">(*)</span> maka wajib diisi
         </p>
       </div>
-      <div className="Wrapper w-full flex flex-row gap-x-5">
+      <div className="Wrapper w-full flex flex-col gap-y-5 lg:flex-row lg:gap-x-5">
         <div className="left-side w-full flex flex-col gap-y-5">
           <TextInput title="Nama Lengkap" required={true} type="text" hintText="cth: Tommy Kurniawan" onChange={handleChange} value={dataDiri.name} name="name" />
           <SelectForm
@@ -88,7 +92,7 @@ const DataUmum = () => {
           />
           <TextInput title="Nama Sekolah" required={true} type="text" hintText="cth: TK Kusuma Mulia Malang" onChange={handleChange} value={dataDiri.namaAsal} name="namaAsal" />
           <TextInput title="NPSN" required={true} type="number" hintText="cth: 09817322" onChange={handleChange} value={dataDiri.npsn} name="npsn" />
-          <div className="flex justify-end w-full">
+          <div className="flex justify-center md:justify-end w-full">
             <SubmitBtn onClick={handleSubmit} />
           </div>
         </div>

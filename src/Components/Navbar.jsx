@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../Assets/Navbar.scss";
+import { useAuthContext } from "../hooks/useAuthContext";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -15,31 +17,52 @@ export const Navbar = () => {
   });
 
   return (
-    <nav className={`navbar fixed-top navbar-expand-lg md:px-16 ${scrolled && "nav-shadow"}`}>
+    <nav
+      className={`navbar fixed-top navbar-expand-lg md:px-16 ${
+        scrolled && "nav-shadow"
+      }`}
+    >
       <div className="container">
-        <img className="navbar-brand" src="images/introduction/logo.png" alt="" />
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <img
+          className="navbar-brand"
+          src="images/introduction/logo.png"
+          alt=""
+        />
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse md:justify-end navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav gap-3">
+        <div
+          className="collapse md:justify-end navbar-collapse"
+          id="navbarNavDropdown"
+        >
+          <ul className="navbar-nav gap-3 align-items-center">
             <li className="nav-item">
-              <a className="nav-link " href="ppdbapps">
+              <Link className="nav-link" to="/ppdbapps">
                 Dashboard
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link " href="#">
+              <Link className="nav-link" to="#pendaftaran">
                 Alur Pendaftaran
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link " href="#">
-                Jadwal
-              </a>
+              <Link className="nav-link" to="#jadwal">
+                <p>Jadwal</p>
+              </Link>
             </li>
             <li className="nav-item">
-              <button className="btn-nav">Login</button>
+              <Link className="nav-link" to="/login">
+                <button className="btn-nav">Login</button>
+              </Link>
             </li>
           </ul>
         </div>

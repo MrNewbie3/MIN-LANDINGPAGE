@@ -9,7 +9,7 @@ const FormRegis = () => {
   return (
     <div className="wrapper mt-6">
       <Tabs>
-        <TabList className={"flex flex-row gap-x-2 font-semibold p-2 bg-grey w-fit rounded-full "}>
+        <TabList className={"flex flex-row flex-wrap justify-center gap-x-2 font-semibold p-2 bg-grey w-fit rounded-xl lg:rounded-full "}>
           <Tab selectedClassName={"bg-green-primary px-6 py-2 rounded-full text-white"} className="px-6 py-2 text-gray-700">
             <button className="flex flex-row items-center gap-x-2">
               {" "}

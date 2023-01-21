@@ -8,7 +8,7 @@ function TabsBtn() {
   return (
     <div className="mt-28">
       <Tabs>
-        <TabList className={"flex flex-row gap-x-2 font-semibold p-2 bg-grey w-fit rounded-full "}>
+        <TabList className={"flex flex-wrap justify-center w-full flex-row gap-x-2 font-semibold p-2 bg-grey lg:w-fit rounded-full "}>
           <Tab selectedClassName={"bg-green-primary px-6 py-2 rounded-full text-white"} className="px-6 py-2 text-gray-700">
             <button className="flex flex-row items-center gap-x-2">
               {" "}

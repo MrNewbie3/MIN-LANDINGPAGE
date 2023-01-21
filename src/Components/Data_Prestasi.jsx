@@ -39,7 +39,7 @@ const DataPrestasi = () => {
       </div>
       {input.map((input, index) => {
         return (
-          <div key={index} className="wrapper flex flex-row w-full justify-center items-center">
+          <div key={index} className="wrapper flex flex-col gap-y-4 lg:flex-row w-full justify-center items-center">
             <TextInput
               title={"Prestasi " + (index + 1)}
               type="text"
@@ -79,7 +79,7 @@ const DataPrestasi = () => {
           </div>
         );
       })}
-      <div className="wrapper-btn flex w-full justify-end flex-row">
+      <div className="wrapper-btn flex justify-center md:justify-end w-full">
         <SubmitBtn onClick={handleSubmit} />
       </div>
     </div>

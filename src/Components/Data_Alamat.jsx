@@ -40,6 +40,7 @@ const DataAlamat = () => {
       },
     });
   };
+
   return (
     <div className="mainwrapper w-full">
       <div className="title my-10">

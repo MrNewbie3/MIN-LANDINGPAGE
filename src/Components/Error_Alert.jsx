@@ -7,7 +7,7 @@ const ErrorAlert = () => {
           <InfoRoundedIcon />
           <p className="text-lg">Pengumuman</p>
         </div>
-        <div className="alert alert-error outline outline-2 outline-red-600 rounded-2xl bg-red-100">
+        <div className="alert alert-error outline outline-2 outline-red rounded-2xl bg-rose-200">
           <div className="flex flex-col items-start">
             <p className="font-bold">Identitas diri belum lengkap!</p>
             <p className="font-medium">Lengkapi terlebih dahulu identitas diri anda dengan klik “Identitas Diri” di atas</p>

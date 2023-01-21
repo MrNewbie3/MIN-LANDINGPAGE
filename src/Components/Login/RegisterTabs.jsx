@@ -25,12 +25,12 @@ const RegisterTabs = () => {
     };
 
     await axios.post("/api/auth/register", newUser).then((user) => {
-      localStorage.setItem("user", user.data.data.user);
+      localStorage.setItem("user", JSON.stringify(user.data.data.user));
 
       dispatch({ type: "LOGIN", payload: user.data.data.user });
 
       setLoading(false);
-      redirect("/login");
+      window.location.href = "/login";
     });
 
     setLoading(false);

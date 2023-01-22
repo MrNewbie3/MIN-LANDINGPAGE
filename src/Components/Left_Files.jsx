@@ -2,6 +2,7 @@ import SubmitBtn from "./Submit_Btn";
 import { useDropzone } from "react-dropzone";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
+import { useState } from "react";
 const Left_Files = () => {
   const { acceptedFiles, fileRejections, getRootProps, getInputProps } = useDropzone({
     accept: {
@@ -10,9 +11,13 @@ const Left_Files = () => {
     },
   });
 
+  const dataFile = acceptedFiles.map((items) => {
+    return items;
+  });
+
   const acceptedFileItems = acceptedFiles.map((file) => (
     <li key={file.path}>
-      {file.path} - {file.size} bytes
+      {file.path} - {Math.round(file.size / (1024 * 1024))} MB
     </li>
   ));
 
@@ -42,9 +47,14 @@ const Left_Files = () => {
         <div className="wrapper-input w-full">
           <div {...getRootProps({ className: "dropzone text-gray-500 border-dashed border-2 border-gray-400 rounded-xl py-3  w-auto h-full text-center flex items-center flex-col justify-center" })}>
             <input {...getInputProps()} />
-            <h1>{acceptedFileItems}</h1>
-            <p>Klik/Drag foto di sini</p>
-            <em>(Format file JPG/PNG, Maksimal 2MB)</em>
+            {dataFile.length > 0 ? (
+              <h1>{acceptedFileItems}</h1>
+            ) : (
+              <div className="wrap">
+                <p>Klik/Drag foto di sini</p>
+                <em>(Format file JPG/PNG, Maksimal 2MB)</em>
+              </div>
+            )}
           </div>
         </div>
       </section>

@@ -9,12 +9,14 @@ import "@fontsource/open-sans/500.css";
 import "@fontsource/open-sans/600.css";
 import "@fontsource/open-sans/300.css";
 import "@fontsource/open-sans/800.css";
+import KartuPeserta from "./Components/Kartu_Peserta";
 function App() {
   return (
     <Router>
       <Routes>
         <Route exact path="/" element={<Introduction />} />
         <Route path="/ppdbapps" element={<PpdbApps />} />
+        <Route path="/ticket" element={<KartuPeserta />} />
         <Route path="/login" element={<Login />} />
       </Routes>
     </Router>

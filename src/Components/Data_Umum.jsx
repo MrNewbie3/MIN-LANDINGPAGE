@@ -54,9 +54,10 @@ const DataUmum = () => {
     }));
   };
 
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     const dataSiswa = {
       nama_lengkap: dataDiri.nama_lengkap[0],
       nisn: dataDiri.nisn[0],
@@ -66,11 +67,18 @@ const DataUmum = () => {
       gol_darah: dataDiri.gol_darah[0],
     };
 
-    await axios.put(`/api/students/${user.user.id}`, dataSiswa, {
-      headers: {
-        Authorization: `Bearer ${user.token}`,
-      },
-    });
+    await axios
+      .put(`/api/students/${user.user.id}`, dataSiswa, {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      })
+      .then((result) => {
+        setLoading(false);
+      })
+      .catch((err) => {
+        setLoading(false);
+      });
   };
 
   return (
@@ -78,22 +86,13 @@ const DataUmum = () => {
       <div className="title my-10">
         <h1 className="font-semibold text-lg">Identitas Diri</h1>
         <p className="text-gray-500 font-medium ">
-          Lengkapi data dibawah, Jika terdapat{" "}
-          <span className="text-red-600">(*)</span> maka wajib diisi
+          Lengkapi data dibawah, Jika terdapat <span className="text-red-600">(*)</span> maka wajib diisi
         </p>
       </div>
-      <div className="Wrapper w-full flex flex-col gap-y-5 lg:flex-row lg:gap-x-5">
-        <form onSubmit={handleSubmit}>
+      <div className="">
+        <form onSubmit={handleSubmit} className="Wrapper w-full flex-col flex lg:flex-row gap-y-5 lg:gap-x-5 ">
           <div className="left-side w-full flex flex-col gap-y-5">
-            <TextInput
-              title="Nama Lengkap"
-              required={true}
-              type="text"
-              hintText="cth: Tommy Kurniawan"
-              onChange={(e) => handleChange(e)}
-              value={dataDiri.nama_lengkap}
-              name="nama_lengkap"
-            />
+            <TextInput title="Nama Lengkap" required={true} type="text" hintText="cth: Tommy Kurniawan" onChange={(e) => handleChange(e)} value={dataDiri.nama_lengkap} name="nama_lengkap" />
             <SelectForm
               onChange={(choices) => {
                 handleChangeKelamin(choices);
@@ -112,73 +111,17 @@ const DataUmum = () => {
               value={bloodType}
               name="gol_darah"
             />
-            <TextInput
-              title="Tempat Lahir"
-              required={true}
-              type="text"
-              hintText="cth: Malang"
-              onChange={handleChange}
-              value={dataDiri.tempat_lahir}
-              name="tempat_lahir"
-            />
-            <TextInput
-              title="Tanggal Lahir"
-              required={true}
-              type="date"
-              hintText="cth: Tommy Kurniawan"
-              onChange={handleChange}
-              value={dataDiri.tanggal_lahir}
-              name="tanggal_lahir"
-            />
+            <TextInput title="Tempat Lahir" required={true} type="text" hintText="cth: Malang" onChange={handleChange} value={dataDiri.tempat_lahir} name="tempat_lahir" />
+            <TextInput title="Tanggal Lahir" required={true} type="date" hintText="cth: Tommy Kurniawan" onChange={handleChange} value={dataDiri.tanggal_lahir} name="tanggal_lahir" />
           </div>
           <div className="right-side w-full flex flex-col gap-y-5">
-            <TextInput
-              title="Anak Ke"
-              required={true}
-              type="number"
-              hintText="cth: 1"
-              onChange={handleChange}
-              value={dataDiri.anak_ke}
-              name="anak_ke"
-            />
-            <TextInput
-              title="NISN"
-              required={true}
-              type="number"
-              hintText="cth: 00634565XXX"
-              onChange={handleChange}
-              value={dataDiri.nisn}
-              name="nisn"
-            />
-            <TextInput
-              title="Asal Sekolah"
-              required={true}
-              type="text"
-              hintText="SD / SMP"
-              onChange={handleChange}
-              value={dataDiri.asal_sekolah}
-              name="asal_sekolah"
-            />
-            <TextInput
-              title="Nama Sekolah"
-              required={true}
-              type="text"
-              hintText="cth: TK Kusuma Mulia Malang"
-              onChange={handleChange}
-              value={dataDiri.nama_sekolah}
-              name="nama_sekolah"
-            />
-            <TextInput
-              title="NPSN"
-              required={true}
-              type="number"
-              hintText="cth: 09817322"
-              onChange={handleChange}
-              value={dataDiri.npsn}
-              name="npsn"
-            />
-            <div className="flex justify-center md:justify-end w-full">
-              <SubmitBtn />
+            <TextInput title="Anak Ke" required={true} type="number" hintText="cth: 1" onChange={handleChange} value={dataDiri.anak_ke} name="anak_ke" />
+            <TextInput title="NISN" required={true} type="number" hintText="cth: 00634565XXX" onChange={handleChange} value={dataDiri.nisn} name="nisn" />
+            <TextInput title="Asal Sekolah" required={true} type="text" hintText="SD / SMP" onChange={handleChange} value={dataDiri.asal_sekolah} name="asal_sekolah" />
+            <TextInput title="Nama Sekolah" required={true} type="text" hintText="cth: TK Kusuma Mulia Malang" onChange={handleChange} value={dataDiri.nama_sekolah} name="nama_sekolah" />
+            <TextInput title="NPSN" required={true} type="number" hintText="cth: 09817322" onChange={handleChange} value={dataDiri.npsn} name="npsn" />
+            <div className="flex justify-center lg:justify-end w-full">
+              <SubmitBtn loading={loading} />
             </div>
           </div>
         </form>

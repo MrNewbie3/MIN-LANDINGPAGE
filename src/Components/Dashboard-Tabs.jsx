@@ -7,8 +7,8 @@ import FormRegis from "./form";
 function TabsBtn() {
   return (
     <div className="mt-28">
-      <Tabs>
-        <TabList className={"flex flex-row gap-x-2 font-semibold p-2 bg-grey w-fit rounded-full "}>
+      <Tabs className={"flex flex-col"}>
+        <TabList className={"flex flex-col  self-center lg:self-start  lg:flex-row gap-x-2 font-semibold p-2 bg-grey w-fit rounded-lg xl:rounded-full "}>
           <Tab selectedClassName={"bg-green-primary px-6 py-2 rounded-full text-white"} className="px-6 py-2 text-gray-700">
             <button className="flex flex-row items-center gap-x-2">
               {" "}

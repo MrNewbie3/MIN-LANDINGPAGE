@@ -6,8 +6,7 @@ const header = (axios.defaults.headers.common = {
 });
 
 const bearer = JSON.parse(localStorage.getItem("user"));
-const token = bearer.token;
-console.log(token);
+const token = bearer === null ? "" : bearer.token;
 const config = { headers: { Authorization: `Bearer ${token}` } };
 
 export const PostData = (url, value) => {

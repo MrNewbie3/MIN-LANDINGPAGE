@@ -9,17 +9,17 @@ const RegisterFlow = () => {
   };
 
   const DataTab = [
-    { label: 'Data Diri', id: 'tab1', content: 'Klik “Daftar Sekarang” atau “Login” diatas, Pilih Tab Daftar, Masukan Data, Login Menggunakan email dan password ketika daftar' },
-    { label: 'Isi Identitas Diri', id: 'tab2', content: 'Isi identitas diri anda sesuai dengan apa yang harus diisi' },
-    { label: 'Unggah Berkas', id: 'tab3', content: 'Unggah berkas berkas yang diperlukan dan pastikan gambar terlihat bagus dan dapat dibaca' },
-    { label: 'Tunggu Verifikasi', id: 'tab4', content: 'Jika semua identitas dan berkas telah diisi, tunggu verifikasi dari admin' },
-    { label: 'Lakukan Tes', id: 'tab5', content: 'Tes dilakukan secara offline atau onside di Man 1 Kota Malang, jadwal bisa dilihat dibawah ini' },
-    { label: 'Lihat Hasil Tes', id: 'tab6', content: 'Tunggu pengumuman keluar sambil banyak banyak beroda' },
-    { label: 'Daftar Ulang', id: 'tab7', content: 'Setelah dipastikan lolos, pastikan untuk segera melakukan daftar ulang sesuai dengan jadwal dibawah' },
-  ]
+    { label: "Data Diri", id: "tab1", content: "Klik “Daftar Sekarang” atau “Login” diatas, Pilih Tab Daftar, Masukan Data, Login Menggunakan email dan password ketika daftar" },
+    { label: "Isi Identitas Diri", id: "tab2", content: "Isi identitas diri anda sesuai dengan apa yang harus diisi" },
+    { label: "Unggah Berkas", id: "tab3", content: "Unggah berkas berkas yang diperlukan dan pastikan gambar terlihat bagus dan dapat dibaca" },
+    { label: "Tunggu Verifikasi", id: "tab4", content: "Jika semua identitas dan berkas telah diisi, tunggu verifikasi dari admin" },
+    { label: "Lakukan Tes", id: "tab5", content: "Tes dilakukan secara offline atau onside di Man 1 Kota Malang, jadwal bisa dilihat dibawah ini" },
+    { label: "Lihat Hasil Tes", id: "tab6", content: "Tunggu pengumuman keluar sambil banyak banyak beroda" },
+    { label: "Daftar Ulang", id: "tab7", content: "Setelah dipastikan lolos, pastikan untuk segera melakukan daftar ulang sesuai dengan jadwal dibawah" },
+  ];
 
   return (
-    <section className="register-flow" id='regisflow'>
+    <section className="register-flow" id="regisflow">
       <div className="container">
         <div className="register-flow-wrapper d-flex align-items-center">
           <article>
@@ -39,17 +39,19 @@ const RegisterFlow = () => {
                 </ul>
               </div>
               <div className="tab-content">
-                  {DataTab.map((tab) => (
-                    activeTab === tab.id && 
-                    <div className='content' key={tab.id}>
-                      <p>{tab.content}</p>
-                    </div>
-                  ))}
+                {DataTab.map(
+                  (tab) =>
+                    activeTab === tab.id && (
+                      <div className="content" key={tab.id}>
+                        <p>{tab.content}</p>
+                      </div>
+                    )
+                )}
               </div>
             </div>
           </article>
           <figure className="d-flex justify-content-center">
-            <img src="images/Introduction/confused.png" alt="design by freepik" />
+            <img src="images/Introduction/Foto_Madrasah_Digital.jpg" alt="design by freepik" className="rounded-full" />
           </figure>
         </div>
       </div>

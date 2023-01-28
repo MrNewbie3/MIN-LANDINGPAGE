@@ -32,13 +32,14 @@ const Footer = () => {
                 <h5>Narahubung</h5>
                 <ul>
                   <li>
-                    <a href="">081234567890 (Bu Ayu)</a>
+                    <a target={"_blank"} href="https://wa.me/6287852302509" rel={"noreferrer"}>
+                      087852302509 (Bu Devy)
+                    </a>
                   </li>
                   <li>
-                    <a href="">080987654321 (Pak Bagus)</a>
-                  </li>
-                  <li>
-                    <a href="">080123123123 (Pak Budi)</a>
+                    <a target={"_blank"} href="https://wa.me/6285649821499" rel={"noreferrer"}>
+                      085649821499 (Pak A.Fauzi)
+                    </a>
                   </li>
                 </ul>
               </div>

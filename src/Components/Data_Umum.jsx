@@ -19,23 +19,26 @@ const bloodType = [
   { value: "O", label: "O" },
 ];
 
+const value = JSON.parse(localStorage.getItem("data_umum")) === null ? "" : JSON.parse(localStorage.getItem("data_umum"));
+
 const DataUmum = () => {
   const [dataDiri, setFormValue] = useState({
-    nama_lengkap: "",
-    jenis_kelamin: "",
-    gol_darah: "",
-    tempat_lahir: "",
-    tanggal_lahir: "",
-    anak_ke: "",
-    nisn: "",
-    nama_sekolah: "",
-    asal_sekolah: "",
-    npsn: "",
+    nama_lengkap: value === "" ? "" : value.nama_lengkap,
+    jenis_kelamin: value === "" ? "" : value.jenis_kelamin,
+    gol_darah: value === "" ? "" : value.gol_darah,
+    tempat_lahir: value === "" ? "" : value.tempat_lahir,
+    tanggal_lahir: value === "" ? "" : value.tanggal_lahir,
+    anak_ke: value === "" ? "" : value.anak_ke,
+    nisn: value === "" ? "" : value.nisn,
+    nama_sekolah: value === "" ? "" : value.nama_sekolah,
+    asal_sekolah: value === "" ? "" : value.asal_sekolah,
+    npsn: value === "" ? "" : value.npsn,
   });
   const { user } = useAuthContext();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(value);
     setFormValue((prevState) => ({
       ...prevState,
       [name]: [value],
@@ -75,6 +78,7 @@ const DataUmum = () => {
       })
       .then((result) => {
         setLoading(false);
+        localStorage.setItem("data_umum", JSON.stringify(dataDiri));
       })
       .catch((err) => {
         setLoading(false);
@@ -117,7 +121,7 @@ const DataUmum = () => {
           <div className="right-side w-full flex flex-col gap-y-5">
             <TextInput title="Anak Ke" required={true} type="number" hintText="cth: 1" onChange={handleChange} value={dataDiri.anak_ke} name="anak_ke" />
             <TextInput title="NISN" required={true} type="number" hintText="cth: 00634565XXX" onChange={handleChange} value={dataDiri.nisn} name="nisn" />
-            <TextInput title="Asal Sekolah" required={true} type="text" hintText="SD / SMP" onChange={handleChange} value={dataDiri.asal_sekolah} name="asal_sekolah" />
+            <TextInput title="Asal Sekolah" required={true} type="text" hintText="TK / BA" onChange={handleChange} value={dataDiri.asal_sekolah} name="asal_sekolah" />
             <TextInput title="Nama Sekolah" required={true} type="text" hintText="cth: TK Kusuma Mulia Malang" onChange={handleChange} value={dataDiri.nama_sekolah} name="nama_sekolah" />
             <TextInput title="NPSN" required={true} type="number" hintText="cth: 09817322" onChange={handleChange} value={dataDiri.npsn} name="npsn" />
             <div className="flex justify-center lg:justify-end w-full">

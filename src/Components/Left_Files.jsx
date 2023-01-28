@@ -1,5 +1,5 @@
 import SubmitBtn from "./Submit_Btn";
-import Dropzone, { useDropzone } from "react-dropzone";
+import { useDropzone } from "react-dropzone";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
 import DescriptionRoundedIcon from "@mui/icons-material/DescriptionRounded";
 import { useState } from "react";
@@ -31,6 +31,16 @@ const Left_Files = () => {
     onDrop,
   });
 
+  const dataFile = acceptedFiles.map((items) => {
+    return items;
+  });
+
+  const acceptedFileItems = acceptedFiles.map((file) => (
+    <li key={file.path}>
+      {file.path} - {Math.round(file.size / (1024 * 1024))} MB
+    </li>
+  ));
+
   const fileRejectionItems = fileRejections.map(({ file, errors }) => (
     <li key={file.path}>
       {file.path} - {file.size} bytes
@@ -41,28 +51,7 @@ const Left_Files = () => {
       </ul>
     </li>
   ));
-  const [file, setFile] = useState(null);
-  const handleFileChange = (event) => {
-    console.log(event.target.files[0]);
-    setFile(event.target.files[0]);
-  };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    const formData = new FormData();
-    formData.set("foto_akte", file);
-    formData.append("name", "Atharafi");
-    console.log(formData.values());
-    axios
-      .post("/api/students/" + user.user.id, { formData, _method: "PUT" }, { headers: { "Content-Type": "multipart/form-data", Authorization: `Bearer ${user.token}` } })
-      .then((result) => {
-        console.log(result.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
   return (
     <div className="left-side w-full flex flex-col gap-y-5">
       <div className="title lg:mb-10">
@@ -76,9 +65,9 @@ const Left_Files = () => {
           </div>
         </div>
         <div className="wrapper-input w-full">
-          <form method="POST" encType="multipart/form-data" onSubmit={handleSubmit}>
-            {/* <div {...getRootProps({ className: "dropzone text-gray-500 border-dashed border-2 border-gray-400 rounded-xl py-3  w-auto h-full text-center flex items-center flex-col justify-center" })}> */}
-            {/* <input {...getInputProps()} />
+          <div {...getRootProps({ className: "dropzone text-gray-500 border-dashed border-2 border-gray-400 rounded-xl py-3  w-auto h-full text-center flex items-center flex-col justify-center" })}>
+            <form onDrop={onDrop} method="PUT" encType="multipart/form-data">
+              <input {...getInputProps()} />
               {dataFile.length > 0 ? (
                 <h1>{acceptedFileItems}</h1>
               ) : (
@@ -86,11 +75,9 @@ const Left_Files = () => {
                   <p>Klik/Drag foto di sini</p>
                   <em>(Format file JPG/PNG, Maksimal 2MB)</em>
                 </div>
-              )} */}
-            <input type="file" onChange={handleFileChange} name="foto_akte" id="" />
-            <button type="submit">Submit</button>
-            {/* </div> */}
-          </form>
+              )}
+            </form>
+          </div>
         </div>
       </section>
     </div>

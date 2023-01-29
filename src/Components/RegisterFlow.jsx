@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "../Assets/RegisterFlow.scss"; 
+import React, { useState } from "react";
+import "../Assets/RegisterFlow.scss";
 
 const RegisterFlow = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -38,7 +38,7 @@ const RegisterFlow = () => {
                   ))}
                 </ul>
               </div>
-              <div className="tab-content"> 
+              <div className="tab-content">
                 {DataTab.map(
                   (tab) =>
                     activeTab === tab.id && (

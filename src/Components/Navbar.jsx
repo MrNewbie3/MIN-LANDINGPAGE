@@ -25,19 +25,19 @@ export const Navbar = () => {
         <div className="collapse md:justify-end navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav gap-3 align-items-center">
             <li className="nav-item">
-              <a className="nav-link" href="http://203.175.11.243/auth/register">
+              <a className="nav-link" href="http://203.175.11.243/auth/login">
                 Dashboard
               </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#pendaftaran">
+              <a className="nav-link" href="#regisflow">
                 Alur Pendaftaran
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#jadwal">
+              <a className="nav-link" href="#schedule">
                 <p>Jadwal</p>
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="http://203.175.11.243/auth/login">

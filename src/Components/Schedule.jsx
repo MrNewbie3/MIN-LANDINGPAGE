@@ -2,7 +2,7 @@ import React from "react";
 import "../Assets/Schedule.scss";
 
 const Schedule = () => {
-  return ( 
+  return (
     <section className="schedule" id="schedule">
       <div className="container">
         <div className="schedule-wrapper d-flex align-items-center">
@@ -43,7 +43,7 @@ const Schedule = () => {
                 <div className="content">
                   <h5>Daftar Ulang</h5>
                   <p>6 – 8 Maret 2023</p>
-                </div> 
+                </div>
               </div>
             </div>
           </article>

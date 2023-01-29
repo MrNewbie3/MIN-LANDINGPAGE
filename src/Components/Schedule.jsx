@@ -43,7 +43,7 @@ const Schedule = () => {
                 <div className="content">
                   <h5>Daftar Ulang</h5>
                   <p>6 – 8 Maret 2023</p>
-                </div>
+                </div> 
               </div>
             </div>
           </article>

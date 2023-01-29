@@ -12,7 +12,7 @@ const Hero = () => {
             <p>Pendaftaran tahun ajaran 2023/2024 dilakukan secara online melalui website ini, untuk tata penggunaan bisa dilihat ke bawah</p>
             <Link to={"/login"}>
               <button className="btn-primary">Daftar Sekarang</button>
-            </Link>
+            </Link> 
           </article>
           <figure className="d-flex justify-content-center">
             <img src="images/Introduction/Foto_Sekolah.jpg" alt="design by freepik" className="rounded-full scale-90" />

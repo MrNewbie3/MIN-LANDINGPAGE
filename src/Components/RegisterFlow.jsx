@@ -38,7 +38,7 @@ const RegisterFlow = () => {
                   ))}
                 </ul>
               </div>
-              <div className="tab-content">
+              <div className="tab-content"> 
                 {DataTab.map(
                   (tab) =>
                     activeTab === tab.id && (

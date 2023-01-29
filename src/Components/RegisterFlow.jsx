@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../Assets/RegisterFlow.scss";
+import "../Assets/RegisterFlow.scss"; 
 
 const RegisterFlow = () => {
   const [activeTab, setActiveTab] = useState("tab1");

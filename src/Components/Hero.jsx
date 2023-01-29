@@ -1,7 +1,7 @@
 import React from "react";
 import "../Assets/Hero.scss";
 import { Link } from "react-router-dom";
-const Hero = () => {
+const  Hero = () => {
   return (
     <div className="hero flex flex-col justify-center items-center">
       <div className="container h-fit flex items-center">

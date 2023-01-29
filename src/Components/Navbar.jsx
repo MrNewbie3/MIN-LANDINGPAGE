@@ -9,7 +9,7 @@ export const Navbar = () => {
     window.onscroll = function () {
       if (window.scrollY > 50) {
         setScrolled(true);
-      } else {
+      } else { 
         setScrolled(false);
       }
     };

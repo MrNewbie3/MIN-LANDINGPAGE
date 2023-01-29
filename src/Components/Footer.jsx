@@ -1,7 +1,5 @@
 import React from "react";
 import "../Assets/Footer.scss";
-import { AiFillFacebook, AiFillInstagram, AiFillYoutube } from "react-icons/ai";
-
 const Footer = () => {
   return (
     <footer>
@@ -9,8 +7,8 @@ const Footer = () => {
         <div className="footer-wrapper d-flex flex-column justify-content-between">
           <div className="footer-content-wrapper d-flex">
             <div className="footer-brand d-flex">
-              <figure>
-                <img src="/images/Introduction/logo-slogan.png" />
+              <figure className="">
+                <img src="/images/Introduction/logo-slogan.png" className="mt-10 lg:mt-0" />
               </figure>
             </div>
             <div className="footer-content d-flex">

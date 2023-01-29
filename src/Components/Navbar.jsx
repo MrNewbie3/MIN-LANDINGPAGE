@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../Assets/Navbar.scss";
-import { useAuthContext } from "../hooks/useAuthContext";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -17,37 +16,18 @@ export const Navbar = () => {
   });
 
   return (
-    <nav
-      className={`navbar fixed-top navbar-expand-lg md:px-16 ${
-        scrolled && "nav-shadow"
-      }`}
-    >
+    <nav className={`navbar fixed-top navbar-expand-lg md:px-16 ${scrolled && "nav-shadow"}`}>
       <div className="container">
-        <img
-          className="navbar-brand"
-          src="images/introduction/logo.png"
-          alt=""
-        />
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <img className="navbar-brand" src="images/introduction/logo.png" alt="" />
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div
-          className="collapse md:justify-end navbar-collapse"
-          id="navbarNavDropdown"
-        >
+        <div className="collapse md:justify-end navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav gap-3 align-items-center">
             <li className="nav-item">
-              <Link className="nav-link" to="/ppdbapps">
+              <a className="nav-link" href="http://203.175.11.243/dashboard/students">
                 Dashboard
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="#pendaftaran">
@@ -60,9 +40,9 @@ export const Navbar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/login">
+              <a className="nav-link" href="http://203.175.11.243/auth/login">
                 <button className="btn-nav">Login</button>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

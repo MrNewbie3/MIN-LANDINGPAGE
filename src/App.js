@@ -14,9 +14,6 @@ function App() {
     <Router>
       <Routes>
         <Route exact path="/" element={<Introduction />} />
-        <Route path="/ppdbapps" element={<PpdbApps />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/*" element={<Introduction />} />
       </Routes>
     </Router>
   );

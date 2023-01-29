@@ -9,7 +9,7 @@ export const Navbar = () => {
     window.onscroll = function () {
       if (window.scrollY > 50) {
         setScrolled(true);
-      } else { 
+      } else {
         setScrolled(false);
       }
     };
@@ -18,7 +18,7 @@ export const Navbar = () => {
   return (
     <nav className={`navbar fixed-top navbar-expand-lg md:px-16 ${scrolled && "nav-shadow"}`}>
       <div className="container">
-        <img className="navbar-brand" src="images/introduction/logo.png" alt="" />
+        <img className="navbar-brand" src={"images/Introduction/logo.png"} alt="" />
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -36,7 +36,7 @@ export const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="#jadwal">
-                <p>Jadwal</p> 
+                <p>Jadwal</p>
               </Link>
             </li>
             <li className="nav-item">

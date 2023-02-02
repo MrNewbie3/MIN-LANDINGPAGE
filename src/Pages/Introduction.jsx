@@ -9,7 +9,8 @@ const Introduction = () => {
   Swal.fire({
     icon: "info",
     title: "Info Penting!",
-    text: "Bagi pendaftar, harap segera melengkapi data berkas dan data lainnya. Apabila ada yang kosong, harap segera mengunggah file KK, Akta dan berkas lain maupun data lainnya",
+
+    text: "Untuk keperluan verifikasi, seluruh pendaftar harap segera melengkapi data berkas dan data lainnya. Apabila ada yang kosong, harap segera mengunggah file KK, Akta dan berkas lain maupun data lainnya",
     footer: '<a href="http://203.175.11.243/">Periksa kelengkapan berkas</a>',
   });
   return (

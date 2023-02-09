@@ -10,7 +10,7 @@ const Hero = () => {
             <h1>PPDB Online</h1>
             <h3>Tiada Hari Tanpa Prestasi</h3>
             <p>Pendaftaran tahun ajaran 2023/2024 dilakukan secara online melalui website ini, untuk tata cara penggunaan bisa dilihat ke bawah</p>
-            <a href={""}>
+            <a href={"http://203.175.11.243/auth/login"}>
               <button className="btn-primary">PPDB Sudah Ditutup</button>
             </a>
           </article>

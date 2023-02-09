@@ -7,10 +7,10 @@ import Schedule from "../Components/Schedule";
 import Swal from "sweetalert2";
 const Introduction = () => {
   Swal.fire({
-    icon: "error",
+    icon: "success",
     title: "Info Penting!",
 
-    text: "PPDB Sudah ditutup, terimakasih bagi anda yang telah mendaftar ke MIN 1 Kota Malang",
+    text: "Verifikasi berkas sudah selesai, silahkan download kartu peserta bagi anda yang lolos. Dan silahkan lengkapi berkas bagi anda yang data berkasnya masih belum lengkap",
   });
   return (
     <div className="md:pl-16">

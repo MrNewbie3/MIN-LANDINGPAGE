@@ -25,9 +25,9 @@ export const Navbar = () => {
         <div className="collapse md:justify-end navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav gap-3 align-items-center">
             <li className="nav-item">
-              {/* <a className="nav-link" href="http://203.175.11.243/auth/login">
+              <a className="nav-link" href="http://203.175.11.243/auth/login">
                 Dashboard
-              </a> */}
+              </a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="#regisflow">
@@ -40,9 +40,9 @@ export const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              {/* <a href={"http://203.175.11.243/auth/login"}>
+              <a href={"http://203.175.11.243/auth/login"}>
                 <button className="btn-primary">Login</button>
-              </a> */}
+              </a>
             </li>
           </ul>
         </div>

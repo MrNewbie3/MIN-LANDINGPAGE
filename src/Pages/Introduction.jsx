@@ -10,7 +10,7 @@ const Introduction = () => {
     icon: "error",
     title: "Info Penting!",
 
-    text: "PPDB sudah ditutup, silahkan download kartu peserta",
+    text: "PPDB sudah ditutup, Silahkan cek kartu peserta anda di website PPDB dan gunakan informasi yang terakhir di update pada laman web kami",
   });
   return (
     <div className="md:pl-16">
@@ -23,4 +23,4 @@ const Introduction = () => {
   );
 };
 
-export default Introduction; 
+export default Introduction;
